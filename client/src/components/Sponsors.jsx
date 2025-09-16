@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import { FaCrown, FaStar, FaMedal, FaHandsHelping } from 'react-icons/fa';
 import { GiDiamondTrophy, GiStarSwirl } from 'react-icons/gi';
 import './Sponsors.css';
+import PGTLogo from '../assets/logos/PGT Logo.png';
+
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -38,62 +40,62 @@ const Sponsors = () => {
   const sponsorsData = {
     'Title Sponsor': [
       { 
-        name: 'TechGiant Inc.', 
-        logo: 'https://logo.clearbit.com/techgiant.com',
-        website: 'https://techgiant.com'
+        name: 'PGT Global Network', 
+        logo: PGTLogo,
+        website: 'https://www.pgtglobalnetwork.com'
       },
     ],
-    'Co-Sponsors': [
-      { 
-        name: 'CloudNine', 
-        logo: 'https://logo.clearbit.com/cloudnine.com',
-        website: 'https://cloudnine.com'
-      },
-      { 
-        name: 'DataDyne', 
-        logo: 'https://logo.clearbit.com/datadyne.org',
-        website: 'https://datadyne.org'
-      },
-    ],
-    'Associate Sponsors': [
-      { 
-        name: 'CodeCraft', 
-        logo: 'https://logo.clearbit.com/codecraft.dev',
-        website: 'https://codecraft.dev'
-      },
-      { 
-        name: 'PixelPioneers', 
-        logo: 'https://logo.clearbit.com/pixelpioneers.tech',
-        website: 'https://pixelpioneers.tech'
-      },
-      { 
-        name: 'NexusLabs', 
-        logo: 'https://logo.clearbit.com/nexuslabs.io',
-        website: 'https://nexuslabs.io'
-      },
-    ],
-    'Community Partners': [
-      { 
-        name: 'DevCommunity', 
-        logo: 'https://logo.clearbit.com/devcommunity.com',
-        website: 'https://devcommunity.com'
-      },
-      { 
-        name: 'CodeForAll', 
-        logo: 'https://logo.clearbit.com/codeforall.org',
-        website: 'https://codeforall.org'
-      },
-      { 
-        name: 'Tech4Good', 
-        logo: 'https://logo.clearbit.com/tech4good.network',
-        website: 'https://tech4good.network'
-      },
-      { 
-        name: 'FutureCoders', 
-        logo: 'https://logo.clearbit.com/futurecoders.io',
-        website: 'https://futurecoders.io'
-      },
-    ],
+    // 'Co-Sponsors': [
+    //   { 
+    //     name: 'CloudNine', 
+    //     logo: 'https://logo.clearbit.com/cloudnine.com',
+    //     website: 'https://cloudnine.com'
+    //   },
+    //   { 
+    //     name: 'DataDyne', 
+    //     logo: 'https://logo.clearbit.com/datadyne.org',
+    //     website: 'https://datadyne.org'
+    //   },
+    // ],
+    // 'Associate Sponsors': [
+    //   { 
+    //     name: 'CodeCraft', 
+    //     logo: 'https://logo.clearbit.com/codecraft.dev',
+    //     website: 'https://codecraft.dev'
+    //   },
+    //   { 
+    //     name: 'PixelPioneers', 
+    //     logo: 'https://logo.clearbit.com/pixelpioneers.tech',
+    //     website: 'https://pixelpioneers.tech'
+    //   },
+    //   { 
+    //     name: 'NexusLabs', 
+    //     logo: 'https://logo.clearbit.com/nexuslabs.io',
+    //     website: 'https://nexuslabs.io'
+    //   },
+    // ],
+    // 'Community Partners': [
+    //   { 
+    //     name: 'DevCommunity', 
+    //     logo: 'https://logo.clearbit.com/devcommunity.com',
+    //     website: 'https://devcommunity.com'
+    //   },
+    //   { 
+    //     name: 'CodeForAll', 
+    //     logo: 'https://logo.clearbit.com/codeforall.org',
+    //     website: 'https://codeforall.org'
+    //   },
+    //   { 
+    //     name: 'Tech4Good', 
+    //     logo: 'https://logo.clearbit.com/tech4good.network',
+    //     website: 'https://tech4good.network'
+    //   },
+    //   { 
+    //     name: 'FutureCoders', 
+    //     logo: 'https://logo.clearbit.com/futurecoders.io',
+    //     website: 'https://futurecoders.io'
+    //   },
+    // ],
   };
 
   // Animation variants for Framer Motion
@@ -220,98 +222,85 @@ const Sponsors = () => {
         </motion.div>
 
         {Object.entries(sponsorsData).map(([category, sponsors]) => (
-          <div 
-            key={category} 
-            className="sponsor-category"
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              width: '100%',
-            }}
-          >
-            <motion.div
-              className="category-header"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="category-icon-wrapper">
-                {categoryIcons[category]}
-              </div>
-              <h3 className="category-title">
-                {category}
-              </h3>
-              <div className="category-underline"></div>
-            </motion.div>
+  <div 
+    key={category} 
+    className={`sponsor-category ${sponsors.length === 1 ? 'single-sponsor' : ''}`} // ✅ add class if only one
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      width: '100%',
+    }}
+  >
+    <motion.div
+      className="category-header"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6 }}
+    >
+      <div className="category-icon-wrapper">
+        {categoryIcons[category]}
+      </div>
+      <h3 className="category-title">{category}</h3>
+      <div className="category-underline"></div>
+    </motion.div>
 
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-              <motion.div
-                className="sponsors-grid"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 280px))',
-                  gap: '2.5rem',
-                  margin: '2rem 0',
-                  position: 'relative',
-                  zIndex: 1,
-                  maxWidth: '1200px',
-                  width: '100%',
-                  padding: '0 2rem',
-                  justifyItems: 'center',
-                }}
-              >
-                {sponsors.map((sponsor, index) => (
-                  <motion.div
-                    key={`${category}-${sponsor.name}-${index}`}
-                    className="sponsor-item"
-                    variants={itemVariants}
-                    whileHover="hover"
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <a 
-                      href={sponsor.website} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="sponsor-logo-link"
-                    >
-                      <div className="sponsor-logo-container">
-                        <img
-                          src={sponsor.logo}
-                          alt={`${sponsor.name} logo`}
-                          className="sponsor-logo"
-                          loading="lazy"
-                          onError={(e) => {
-                            if (!e.target.src.includes('logo.clearbit.com')) {
-                              const domain = sponsor.website ? 
-                                sponsor.website.replace(/^https?:\/\//, '').split('/')[0] : 
-                                sponsor.name.toLowerCase().replace(/\s+/g, '');
-                              e.target.src = `https://logo.clearbit.com/${domain}?size=300`;
-                              e.target.onerror = (err) => {
-                                err.target.onerror = null;
-                                err.target.src = getPlaceholderImage(sponsor.name);
-                              };
-                            } else {
-                              e.target.onerror = null;
-                              e.target.src = getPlaceholderImage(sponsor.name);
-                            }
-                          }}
-                        />
-                      </div>
-                      <p className="sponsor-name">{sponsor.name}</p>
-                      <div className="sponsor-glow"></div>
-                    </a>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
+    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+      <motion.div
+        className="sponsors-grid"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+      >
+        {sponsors.map((sponsor, index) => (
+          <motion.div
+            key={`${category}-${sponsor.name}-${index}`}
+            className="sponsor-item"
+            variants={itemVariants}
+            whileHover="hover"
+            whileTap={{ scale: 0.98 }}
+          >
+            <a 
+              href={sponsor.website} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="sponsor-logo-link"
+            >
+              <div className="sponsor-logo-container">
+                <img
+                  src={sponsor.logo}
+                  alt={`${sponsor.name} logo`}
+                  className="sponsor-logo"
+                  loading="lazy"
+                  onError={(e) => {
+                    if (!e.target.src.includes('logo.clearbit.com')) {
+                      const domain = sponsor.website ? 
+                        sponsor.website.replace(/^https?:\/\//, '').split('/')[0] : 
+                        sponsor.name.toLowerCase().replace(/\s+/g, '');
+                      e.target.src = `https://logo.clearbit.com/${domain}?size=300`;
+                      e.target.onerror = (err) => {
+                        err.target.onerror = null;
+                        err.target.src = getPlaceholderImage(sponsor.name);
+                      };
+                    } else {
+                      e.target.onerror = null;
+                      e.target.src = getPlaceholderImage(sponsor.name);
+                    }
+                  }}
+                />
+              </div>
+              <p className="sponsor-name">{sponsor.name}</p>
+              <div className="sponsor-glow"></div>
+            </a>
+          </motion.div>
         ))}
+      </motion.div>
+    </div>
+  </div>
+))}
+
 
         <motion.div
           className="become-sponsor"
@@ -320,7 +309,7 @@ const Sponsors = () => {
           viewport={{ once: true, margin: "-50px" }}
           variants={ctaVariants}
         >
-          <motion.div
+          {/* <motion.div
             className="cta-content"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -344,7 +333,7 @@ const Sponsors = () => {
                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </motion.a>
-          </motion.div>
+          </motion.div> */}
           <div className="cta-decoration">
             <div className="cta-orb cta-orb-1"></div>
             <div className="cta-orb cta-orb-2"></div>

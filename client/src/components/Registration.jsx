@@ -217,7 +217,7 @@ const Registration = () => {
               className="liquid-button"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              onClick={() => window.open('https://example.com/register', '_blank')}
+              onClick={() => window.open('https://forms.gle/ojM9E68b2wMdosBG7', '_blank')}
             >
               <span className="button-text">Register Now</span>
               <span className="button-hover"></span>
@@ -242,12 +242,12 @@ const Registration = () => {
               <span>Limited Seats Available</span>
             </div>
             <div className="feature">
-              <div className="feature-icon">⚡</div>
-              <span>Early Bird Discounts</span>
+              <div className="feature-icon">💸</div>
+              <span>Exciting Prizes</span>
             </div>
             <div className="feature">
-              <div className="feature-icon">🎁</div>
-              <span>Exclusive Swag</span>
+              <div className="feature-icon">🍽️</div>
+              <span>Refreshment Included</span>
             </div>
           </motion.div>
         </div>

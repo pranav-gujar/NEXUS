@@ -461,10 +461,13 @@
 /* Sponsor logo link */
 .sponsor-logo-link {
   display: flex;
-  height: 100%;
+  flex-direction: column; /* ✅ Stack logo on top, name below */
+  align-items: center;   /* ✅ Center both horizontally */
   text-decoration: none;
   outline: none;
+  height: 100%;
 }
+
 
 /* Ensure the container takes full height */
 .sponsors-grid {

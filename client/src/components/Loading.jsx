@@ -66,7 +66,7 @@ const Loading = () => {
       <div className="loading-content">
         <div className="loading-logo">
           <div className="rotating-circle"></div>
-          <div className="loading-text">Rotaract Global</div>
+          <div className="loading-text">NEXUS 2k25 <br /> By Rotaract WCE</div>
         </div>
         <div className="loading-progress">
           <div 

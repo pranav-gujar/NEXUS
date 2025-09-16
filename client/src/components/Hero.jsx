@@ -32,7 +32,7 @@ export default function Hero() {
       const tl = gsap.timeline();
 
       // Text reveal effect
-      const text = "Global Mandate 3.0";
+      const text = "NEXUS 2K25";
       
       tl.to(headingRef.current, {
         duration: 1,
@@ -197,13 +197,27 @@ export default function Hero() {
       </div>
       <div className="logos-container">
         <div className="logo-wrapper left-logo">
-          <img src={ClubLogo} alt="WCE Logo" className="logo" />
-        </div>
+  <a href="https://www.rotaractwce.org/" target="_blank" rel="noopener noreferrer">
+    <img src={ClubLogo} alt="Rotaract WCE Logo" className="logo" />
+  </a>
+</div>
+
         <div className="hero-content">
-          <h2 ref={subheadingRef} className="subheading">Something powerful & engaging</h2>
+          <h2 ref={subheadingRef} className="subheading" >Something powerful & engaging</h2>
           <h1 ref={headingRef} className="heading"></h1>
+          <p ef={textRef} className="description">Think. Connect. Transform.</p>
           <p ref={textRef} className="description">Join us for an unforgettable experience at the year's biggest event!</p>
-          <button ref={buttonRef} className="cta-button">Register Now</button>
+          {/* <button href="https://forms.gle/ojM9E68b2wMdosBG7" ref={buttonRef} className="cta-button">Register Now</button> */}
+          <a 
+  href="https://forms.gle/ojM9E68b2wMdosBG7" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  ref={buttonRef} 
+  className="cta-button"
+>
+  Register Now
+</a>
+
         </div>
         <div className="logo-wrapper right-logo">
           <img src={NEXUSLogo} alt="WCE Logo" className="logo" />

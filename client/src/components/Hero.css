@@ -72,12 +72,12 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  /* background: rgba(255, 255, 255, 0.1); */
   border-radius: 12px;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   transition: var(--transition);
-  min-width: 180px;
-  max-width: 200px;
+  /* min-width: 180px; */
+  /* max-width: 200px; */
 }
 
 .logo-wrapper:hover {
@@ -87,13 +87,15 @@
 }
 
 .logo {
-  max-width: 100%;
-  height: auto;
+  /* max-width: 100%; */
+  /* height: 100%; */
   transition: var(--transition);
+  height: 500px;
+  width: 500px;
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  transform: scale(2);
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
 }
 
@@ -220,46 +222,293 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Responsive Adjustments */
+
+
+.cta-button {
+  background: linear-gradient(135deg, #ff4d6d, #ff884d);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(255, 77, 109, 0.6);
+}
+
+
+.hero-content {
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+.subheading {
+  font-size: clamp(0.8rem, 3vw, 1.5rem); /* responsive */
+  color: #00f5ff; /* neon cyan */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px rgba(0, 245, 255, 0.7);
+  animation: fadeInDown 1.2s ease-out;
+}
+
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff4d6d, #ffb84d, #00f5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(255, 77, 109, 0.8);
+  margin-bottom: 1.2rem;
+  animation: glowPulse 2.5s infinite alternate;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.3);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #ff4d6d, #ff884d);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(255, 77, 109, 0.6);
+}
+
+/* Animations */
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 15px rgba(255, 77, 109, 0.8),
+                 0 0 30px rgba(255, 184, 77, 0.6);
+  }
+  to {
+    text-shadow: 0 0 25px rgba(0, 245, 255, 0.9),
+                 0 0 40px rgba(255, 77, 109, 0.7);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.logo {
+  width: 200px;
+  height: auto;
+  animation: floatGlow 5s ease-in-out infinite;
+}
+
+/* Floating + glowing combined */
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 6px rgba(0,245,255,0.6));
+  }
+  50% {
+    transform: translateY(-12px);
+    filter: drop-shadow(0 0 18px rgba(255,77,109,0.9));
+  }
+  100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 6px rgba(0,245,255,0.6));
+  }
+}
+
+
+/* Default (desktop/laptop) keeps your current layout */
+.logos-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Tablet (up to 1024px) */
 @media (max-width: 1024px) {
   .logos-container {
     flex-direction: column;
     gap: 1.5rem;
     padding: 1rem;
   }
-  
+
   .logo-wrapper {
     max-width: 150px;
     padding: 1rem;
   }
-  
+
   .left-logo {
     order: 1;
   }
-  
+
   .hero-content {
     order: 2;
     padding: 1.5rem 1rem;
     margin: 0;
   }
-  
+
   .right-logo {
     order: 3;
   }
 }
 
+/* Mobile (up to 768px) */
 @media (max-width: 768px) {
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  /* Logos stacked top & bottom */
+  .logos-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .left-logo {
+    order: -1; /* top */
+  }
+
+  .hero-content {
+    order: 2;
+    max-width: 90%;
+    padding: 1rem 0;
+  }
+
+  .right-logo {
+    order: 3; /* bottom */
+  }
+
+  /* Text scaling */
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* main heading */
   }
-  
+
   .hero-content h2.subheading {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    font-size: 0.9rem; /* subheading */
+    letter-spacing: 1px;
   }
-  
+
+  .hero-content .description {
+    font-size: 1rem;
+  }
+
+  /* Button */
   .cta-button {
-    padding: 0.8rem 2rem;
     font-size: 0.9rem;
+    padding: 0.8rem 2rem;
+  }
+
+  /* Logos */
+  .logo {
+    width: 140px;
+    height: auto;
+  }
+}
+
+.subheading {
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+}
+
+@media (max-width: 400px) {
+  .subheading {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
   }
 }
