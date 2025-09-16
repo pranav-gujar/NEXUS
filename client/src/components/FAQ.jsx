@@ -8,29 +8,10 @@ const FAQ = () => {
 
   const faqItems = [
     {
-      question: 'Who can participate in Global Mandate 2.0?',
-      answer: 'Global Mandate 2.0 is open to all students from any educational institution. Whether you\'re an undergraduate, postgraduate, or research scholar, you\'re welcome to participate in this exciting event.'
+      question: 'Who can participate in NEXUS 2025?',
+      answer: 'NEXUS is open to all students from any educational institution. Whether you\'re an undergraduate, postgraduate, or research scholar, you\'re welcome to participate in this exciting event.'
     },
-    {
-      question: 'How can I register for the event?',
-      answer: 'You can register for Global Mandate 2.0 by visiting our registration page and filling out the required details. Make sure to register before the deadline to secure your spot in the event.'
-    },
-    {
-      question: 'Is there any registration fee?',
-      answer: 'No, participation in Global Mandate 2.0 is completely free of cost. There are no hidden charges or fees for any of the events or workshops.'
-    },
-    {
-      question: 'What are the event timings?',
-      answer: 'The event will be held from 9:00 AM to 6:00 PM on both days. Detailed schedule will be shared with registered participants via email.'
-    },
-    {
-      question: 'Will certificates be provided?',
-      answer: 'Yes, all participants will receive e-certificates of participation. Winners and runners-up will receive special certificates and exciting prizes.'
-    },
-    {
-      question: 'What should I bring to the event?',
-      answer: 'Please bring a valid college ID card, your registration confirmation, and any materials specified for your registered events. Laptops are recommended for technical events.'
-    }
+    
   ];
 
   const toggleAccordion = (index) => {

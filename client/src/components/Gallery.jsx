@@ -1,85 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiChevronLeft, FiChevronRight, FiPlay, FiPause } from 'react-icons/fi';
 import Masonry from 'react-masonry-css';
 import './Gallery.css';
+import one from '../assets/gallery/1.jpg';
+import two from '../assets/gallery/2.jpg';
+import six from '../assets/gallery/6.jpg';
 
-// High-quality tech event and conference images
+// Local images for gallery
 const galleryImages = [
   { 
     id: 1, 
-    src: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Keynote speech at Global Tech Summit'
+    image: one,
+    // alt: 'Keynote speech at Global Tech Summit'
   },
   { 
     id: 2, 
-    src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Crowd at tech conference'
+    image: two,
+    // alt: 'Crowd at tech conference'
   },
   { 
     id: 3, 
-    src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Networking session'
-  },
-  { 
-    id: 4, 
-    src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Team collaboration workshop'
-  },
-  { 
-    id: 5, 
-    src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80', 
-    alt: 'Panel discussion with industry experts'
-  },
-  { 
-    id: 6, 
-    src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Speaker engaging with audience'
-  },
-  { 
-    id: 7, 
-    src: 'https://images.unsplash.com/photo-1524179091875-b4893398b2b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Workshop in progress'
-  },
-  { 
-    id: 8, 
-    src: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1411&q=80', 
-    alt: 'Audience listening to presentation'
-  },
-  { 
-    id: 9, 
-    src: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Speaker on stage with presentation'
-  },
-  { 
-    id: 10, 
-    src: 'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Conference stage with lighting effects'
-  },
-  { 
-    id: 11, 
-    src: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Networking at the event'
-  },
-  { 
-    id: 12, 
-    src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Audience applauding'
-  },
-  { 
-    id: 13, 
-    src: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1484&q=80', 
-    alt: 'Speaker with presentation slides'
-  },
-  { 
-    id: 14, 
-    src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Panel discussion with multiple speakers'
-  },
-  { 
-    id: 15, 
-    src: 'https://images.unsplash.com/photo-1522071901879-4c7b0a4c5f4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80', 
-    alt: 'Crowd at tech exhibition'
+    image: six,
+    // alt: 'Networking session'
   },
 ];
 
@@ -94,9 +37,13 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isSlideshowRunning, setIsSlideshowRunning] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  let slideshowInterval;
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
 
+  const slideshowInterval = useRef(null);
+
+  // Handle resize for mobile detection
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -106,17 +53,18 @@ const Gallery = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Handle slideshow
   useEffect(() => {
     if (isSlideshowRunning) {
-      slideshowInterval = setInterval(() => {
+      slideshowInterval.current = setInterval(() => {
         nextImage();
       }, 3000);
     }
 
     return () => {
-      if (slideshowInterval) clearInterval(slideshowInterval);
+      if (slideshowInterval.current) clearInterval(slideshowInterval.current);
     };
-  }, [isSlideshowRunning, currentIndex]);
+  }, [isSlideshowRunning]);
 
   const openLightbox = (image, index) => {
     setSelectedImage(image);
@@ -133,13 +81,19 @@ const Gallery = () => {
   };
 
   const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
-    setSelectedImage(galleryImages[(currentIndex + 1) % galleryImages.length]);
+    setCurrentIndex(prevIndex => {
+      const newIndex = (prevIndex + 1) % galleryImages.length;
+      setSelectedImage(galleryImages[newIndex]);
+      return newIndex;
+    });
   };
 
   const prevImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + galleryImages.length) % galleryImages.length);
-    setSelectedImage(galleryImages[(currentIndex - 1 + galleryImages.length) % galleryImages.length]);
+    setCurrentIndex(prevIndex => {
+      const newIndex = (prevIndex - 1 + galleryImages.length) % galleryImages.length;
+      setSelectedImage(galleryImages[newIndex]);
+      return newIndex;
+    });
   };
 
   const toggleSlideshow = () => {
@@ -158,9 +112,8 @@ const Gallery = () => {
           }}
         >
           <span className="bg-gradient-to-r from-green-300 to-sky-500 bg-clip-text text-transparent">
-            Glimpses of Global Mandate 2.0
-          </span>{' '}
-          <span className="text-gray-200"></span>
+            Glimpses of Previous Events
+          </span>
         </h2>
         
         <div className="gallery-controls">
@@ -191,8 +144,8 @@ const Gallery = () => {
             >
               <div className="gallery-image-container">
                 <img 
-                  src={image.src} 
-                  alt={image.alt} 
+                  src={image.image}
+                  alt={image.alt}
                   className="gallery-image"
                   loading="lazy"
                 />
@@ -240,8 +193,8 @@ const Gallery = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src={selectedImage.src} 
-                  alt={selectedImage.alt} 
+                  src={selectedImage.image}
+                  alt={selectedImage.alt}
                   className="lightbox-image"
                 />
               </motion.div>

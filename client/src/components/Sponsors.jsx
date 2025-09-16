@@ -216,8 +216,7 @@ const Sponsors = () => {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            We're grateful to our amazing sponsors for their generous support and partnership in making this event possible.
-            Their contribution helps us create an unforgettable experience for all participants.
+            Grateful to our sponsors for powering this event and making it truly unforgettable.
           </motion.p>
         </motion.div>
 
@@ -302,13 +301,13 @@ const Sponsors = () => {
 ))}
 
 
-        <motion.div
+        {/* <motion.div
           className="become-sponsor"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={ctaVariants}
-        >
+        > */}
           {/* <motion.div
             className="cta-content"
             initial={{ opacity: 0, y: 20 }}
@@ -339,7 +338,7 @@ const Sponsors = () => {
             <div className="cta-orb cta-orb-2"></div>
             <div className="cta-orb cta-orb-3"></div>
           </div>
-        </motion.div>
+        {/* </motion.div> */}
       </div>
     </section>
   );

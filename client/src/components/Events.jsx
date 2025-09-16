@@ -120,23 +120,23 @@ const EventCard = ({ event }) => {
           <div className="text-purple-300 text-sm mt-2">Click to learn more →</div>
         </div>
         <div className="event-card-back p-6">
-          <div className="back-content h-full flex flex-col">
-            <h3 className="text-2xl font-bold text-purple-500 text-center mb-4">{event.title}</h3>
-            <div className="divider h-px bg-sky-700 my-4 w-1/2 mx-auto"></div>
-            <p className="text-sky-300 flex-grow">{event.description}</p>
-            <div className="event-rules">
-              <h4 className="text-purple-400 font-semibold mb-2">Key Points:</h4>
-              <ul className="space-y-2">
-                {event.rules.map((rule, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-sky-400 mr-2">•</span>
-                    <span className="text-sky-300 text-sm">{rule}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+  <div className="back-content">
+    <h3 className="back-title">{event.title}</h3>
+    <p className="event-description">{event.description}</p>
+    <div className="event-rules">
+      <h4>Key Points:</h4>
+      <ul>
+        {event.rules.map((rule, index) => (
+          <li key={index}>
+            <span className="rule-bullet">•</span> &nbsp;
+            <span className="rule-text">{rule}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
   );
