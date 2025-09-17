@@ -42,7 +42,7 @@ const Sponsors = () => {
       { 
         name: 'PGT Global Network', 
         logo: PGTLogo,
-        website: 'https://www.pgtglobalnetwork.com'
+        website: 'https://www.linkedin.com/company/pgt-global-network/'
       },
     ],
     // 'Co-Sponsors': [

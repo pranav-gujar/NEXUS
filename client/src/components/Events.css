@@ -95,7 +95,7 @@
 
 .event-card {
   width: 100%;
-  height: 450px; /* Increased height for better content display */
+  height: 520px; /* Increased height for better content display */
   position: relative;
   transform-style: preserve-3d;
   cursor: pointer;

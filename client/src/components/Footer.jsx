@@ -5,7 +5,7 @@ import PGTLogo from '../assets/logos/PGT Logo.png';
 
 const Footer = () => {
   const sponsors = [
-    { name: 'PGT Global Network', url: 'https://www.pgtgobalnetwork.com', logo: PGTLogo },
+    { name: 'PGT Global Network', url: 'https://www.linkedin.com/company/pgt-global-network/', logo: PGTLogo },
     // Add more sponsors if available
   ];
 

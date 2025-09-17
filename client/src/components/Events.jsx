@@ -9,60 +9,61 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 const eventsData = [
   {
     id: 1,
-    title: 'Tech Symposium',
-    description: 'A gathering of tech enthusiasts and professionals to discuss the latest trends and innovations in technology.',
+    title: 'Cubers Arena',
+    description: 'A Rubik’s Cube speedcubing challenge testing problem-solving, hand-eye coordination, and speed under pressure across three elimination rounds.',
     rules: [
-      '10-minute presentation slots',
-      'Open Q&A session',
-      'No promotional content',
-      'Must submit slides in advance'
+      'Only standard 3x3 cubes allowed (magnetic permitted)',
+      '15 seconds inspection time before each solve',
+      'Official CS Timers will be used',
+      'Top solvers advance based on averages (Ao5 / Ao7)'
     ]
   },
   {
     id: 2,
-    title: 'Hackathon',
-    description: 'A 24-hour coding competition where participants build innovative solutions to real-world problems.',
+    title: 'Action Architects',
+    description: 'Teams step into the shoes of NGOs, making smart budget choices, pitching impactful ideas, and convincing sponsors to fund their vision.',
     rules: [
-      'Teams of 2-4 members',
-      'No pre-written code',
-      'Open source projects only',
-      'Judging based on innovation and execution'
+      'Allocate budget among activities aligned with NGO vision',
+      'Clear written justification required for allocations',
+      'Pitch for ₹50,000 funding to sponsors in Round 2',
+      'Final surprise round revealed on event day'
     ]
   },
   {
     id: 3,
-    title: 'Workshop Series',
-    description: 'Hands-on sessions led by industry experts to enhance your technical skills and knowledge.',
+    title: 'Mind Your Business',
+    description: 'A business competition with rounds on quizzing, creative product pitching, and one-slide business/tender presentations to test entrepreneurial skills.',
     rules: [
-      'Bring your own laptop',
-      'Pre-registration required',
-      'Limited seats available',
-      'Beginner to advanced levels'
+      'Individual participation only',
+      'Business Quiz with 40 offline questions in Round 1',
+      'Creative sales pitch of redesigned product in Round 2',
+      'One-slide tender/business pitch in Round 3'
     ]
   },
   {
     id: 4,
-    title: 'Panel Discussion',
-    description: 'Interactive discussions with industry leaders sharing insights on emerging technologies.',
+    title: 'NitiTalks',
+    description: 'An engaging event themed “From Knowledge to Power, through Policy” with rounds on quiz, treasure hunt, and political party creation.',
     rules: [
-      'Audience Q&A segment',
-      'Moderated discussion',
-      '45-minute duration',
-      'No recording allowed'
+      'Round 1: GK & current affairs quiz',
+      'Round 2: Treasure Hunt “Save the Chair”',
+      'Round 3: Form and pitch your own political party',
+      'Respect time limits and fair play throughout'
     ]
   },
   {
     id: 5,
-    title: 'Networking Mixer',
-    description: 'An opportunity to connect with professionals and like-minded individuals in the tech industry.',
+    title: 'Equinox',
+    description: 'A multi-round intellectual challenge testing geopolitics, current affairs, and analytical thinking through quizzes, group discussions, and a surprise round.',
     rules: [
-      'Business casual attire',
-      'Bring business cards',
-      '30-second pitch prepared',
-      'Respect time limits'
+      'Round 1: MCQs and written questions (100 marks)',
+      'Round 2: Group discussion on problem statement',
+      'Round 3: Surprise round revealed on the day',
+      'Judged on content, communication, leadership, and analysis'
     ]
   }
 ];
+
 
 const EventCard = ({ event }) => {
   const [isHovered, setIsHovered] = useState(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./EventPoster.css";
-import poster from "../assets/poster.jpeg";
+import poster from "../assets/poster.png";
 
 const EventPoster = () => {
   return (
@@ -21,7 +21,7 @@ const EventPoster = () => {
             className="poster-img"
           />
           <div className="poster-overlay"></div>
-          <div className="poster-date">OCT 15-16</div>
+          <div className="poster-date">OCT 11-12</div>
         </div>
       </motion.div>
     </section>

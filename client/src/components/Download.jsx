@@ -297,7 +297,7 @@ const Download = () => {
               <div className="popup-icon">
                 <FaDownload size={48} />
               </div>
-              <h3>Download Brochure</h3>
+              <h3>Download RuleBook</h3>
               <p>One-click access to all event details.</p>
               <button
                 className="download-button"
