@@ -42,7 +42,7 @@ const eventsData = [
   },
   {
     id: 4,
-    title: 'NitiTalks',
+    title: 'नीतिTalks',
     description: 'An engaging event themed “From Knowledge to Power, through Policy” with rounds on quiz, treasure hunt, and political party creation.',
     rules: [
       'Round 1: GK & current affairs quiz',
