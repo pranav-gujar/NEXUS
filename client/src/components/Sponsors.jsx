@@ -7,6 +7,10 @@ import { GiDiamondTrophy, GiStarSwirl } from 'react-icons/gi';
 import './Sponsors.css';
 import PGTLogo from '../assets/logos/PGT Logo.png';
 
+import PNG from '../assets/logos/png.png';
+import LOKMAT from '../assets/logos/lokmat.jpeg';
+
+
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -40,9 +44,16 @@ const Sponsors = () => {
   const sponsorsData = {
     'Title Sponsor': [
       { 
-        name: 'PGT Global Network', 
-        logo: PGTLogo,
-        website: 'https://www.linkedin.com/company/pgt-global-network/'
+        name: 'PNG', 
+        logo: PNG,
+        // website: 'https://www.linkedin.com/company/pgt-global-network/'
+      },
+    ],
+    'Media Sponsor': [
+      { 
+        name: 'LOKMAT', 
+        logo: LOKMAT,
+        // website: 'https://www.linkedin.com/company/pgt-global-network/'
       },
     ],
     // 'Co-Sponsors': [
